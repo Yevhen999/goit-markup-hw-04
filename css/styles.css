@@ -59,7 +59,7 @@ img {
 
 .header {
   padding-top: 24px;
-  padding-bottom: 25px;
+  padding-bottom: 24px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #ececec;
@@ -118,10 +118,15 @@ img {
   margin-right: 50px;
 }
 
-.nav-list-item,
-.nav-contacts-list {
+.nav-list-item {
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.nav-list-item,
+.nav-contacts-list {
+  /* padding-top: 32px;
+  padding-bottom: 32px; */
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -152,12 +157,35 @@ img {
   color: var(--accent-color);
 }
 
-/* .mail-icon::before {
-  background-image: url(../images/mail.svg);
-  height: 12px;
-  width: 16px;
-  background-position: center;
-} */
+.mail-icon-svg {
+  /* height: 12px;
+  width: 16px; */
+  fill: var(--second-color);
+  margin-right: 10px;
+}
+
+.nav-contacts-list:hover .mail-icon-svg,
+.nav-contacts-list:focus .mail-icon-svg {
+  fill: var(--accent-color);
+}
+
+.nav-contacts-list:hover .tel-icon-svg,
+.nav-contacts-list:focus .tel-icon-svg {
+  fill: var(--accent-color);
+}
+
+.tel-icon-svg {
+  /* height: 16px;
+  width: 10px; */
+  fill: var(--second-color);
+  margin-right: 10px;
+}
+
+.nav-contacts .nav-contacts-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* hero */
 
@@ -359,7 +387,7 @@ img {
 
 .team-text {
   padding-top: 30px;
-  /* padding-bottom: 30px; */
+  padding-bottom: 30px;
 }
 
 .team-name {
@@ -381,35 +409,50 @@ img {
   margin-bottom: 16px;
 }
 
-.social-list {
+.soc-list {
   display: flex;
   justify-content: center;
 }
-.social-item {
+.soc-item {
   width: 44px;
   height: 44px;
   margin-right: 10px;
 }
 
-.social-item:last-child {
+.soc-item:last-child {
   margin-right: 0;
 }
 
-.social-link {
+.soc-link {
   width: 100%;
   height: 100%;
-  background-color: red;
+
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.social-icon {
+.soc-link:hover,
+.soc-link:focus {
+  background-color: var(--accent-color);
+}
+
+.soc-icon {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
 }
+
+.soc-link:hover .soc-icon,
+.soc-link:focus .soc-icon {
+  fill: var(--third-background-color);
+}
+
+/* .soc-icon:hover,
+.soc-icon:focus {
+  fill: var(--third-background-color);
+} */
 
 /*    Clients    */
 
@@ -427,16 +470,29 @@ img {
 }
 
 .clients-item {
-  width: 170px;
-
+  width: auto;
+  height: auto;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+}
+
+.clients-item:hover,
+.clients-item:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .clients-link {
   display: block;
   text-align: center;
   padding: 16px 32px;
+  color: #afb1b8;
+}
+
+.clients-svg {
+  fill: currentColor;
+  /* display: block;
+  text-align: center; */
 }
 
 .clients-link:hover,
@@ -450,6 +506,16 @@ img {
   background-color: var(--fourth-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer-div {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-left-text {
+  margin-right: 70px;
+  min-width: 231px;
 }
 
 .footer-logo {
@@ -498,6 +564,53 @@ img {
   color: var(--accent-color);
 }
 
+.footer-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-soc-item {
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.footer-soc-item:last-child {
+  margin-right: 0;
+}
+
+.footer-soc-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--third-background-color);
+}
+
+.footer-soc-icon {
+  fill: currentColor;
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--accent-color);
+}
 /*      Portfolio      */
 
 /* .portfolio {
@@ -540,6 +653,8 @@ img {
 .portfolio-btn:focus {
   background-color: var(--accent-color);
   color: var(--third-background-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-card {
